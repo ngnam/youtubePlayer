@@ -7,12 +7,14 @@ import { RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
 import { TeamListComponent } from './teams/team-list/team-list.component';
 import { PlayerListComponent } from './player/player-list/player-list.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamListComponent,
-    PlayerListComponent
+    PlayerListComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -30,11 +32,11 @@ import { PlayerListComponent } from './player/player-list/player-list.component'
         },
         {
           path: '',
-          component: TeamListComponent
+          component: PlayerListComponent
         },
         {
           path: '**',
-          component: TeamListComponent
+          component: NotFoundComponent
         }
 
       ]
@@ -42,6 +44,6 @@ import { PlayerListComponent } from './player/player-list/player-list.component'
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [TeamListComponent]
 })
 export class AppModule { }
